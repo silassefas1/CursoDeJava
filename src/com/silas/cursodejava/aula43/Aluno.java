@@ -1,9 +1,12 @@
 package com.silas.cursodejava.aula43;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Aluno  {
 	
 	private String curso;
-	private String[][] notas;
+	private double[] notas;
 
 
 	public Aluno() {
@@ -26,13 +29,19 @@ public class Aluno  {
 		this.curso = curso;
 	}
 
-	public String[][] getNotas() {
+	
+	public double[] getNotas() {
 		return notas;
 	}
-	public void setNotas(String[][] notas) {
+
+
+
+	public void setNotas(double[] notas) {
 		this.notas = notas;
 	}
-	
+
+
+
 	public double calcularMedia() {
 		
 		return 0;
@@ -53,11 +62,35 @@ public class Aluno  {
 
 
 
-	/*@Override
-	public void imprimirEtiquetaEndereco() {
-		
-		System.out.println(this.obterEtiquetaEndereco());
-		
+	/*Auto gerado*/
+	public String toString() {
+		return "Aluno [curso=" + curso + ", notas=" + Arrays.toString(notas) + "]";
+	}
+
+
+
+	
+	/*o importante nesse equals e o nome do curso*/
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		Aluno other = (Aluno) obj;
+		if (curso.equalsIgnoreCase(other.getCurso())) {
+			return true;
+		}
+			
+		return false;
+	}
+
+	/*sobrescrevendo o metodo toString
+	public String toString() {
+		String s =  curso +"\n";
+		for (double nota: notas) {
+			s+=nota + " ";
+		}
+		return s;
 	}*/
 	
 	
